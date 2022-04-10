@@ -18,10 +18,14 @@ However, after ETL and analysis it was found that there were no reviews for digi
 ## Results
 
 #### There were zero Digital Music Reviews created through Vine
+Creating a dataframe with filtered data "vine == Y" produced zero results:
+
 ![DataFrameVine](/Images/vine_df.png)
 
-This was cross-referenced against a query in PGAdmin
+To double check, this was cross-referenced against a query in PGAdmin:
 
 <img src="https://github.com/NinaQuik/Amazon_Vine_Analysis/blob/main/Images/Vine_query.png" width="500" height="500">
 
-#### Music Review not created through Vine
+OK, so there were no review created through Vine.  How many were there?
+
+#### Music Reviews
