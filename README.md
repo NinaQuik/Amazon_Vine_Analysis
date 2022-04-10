@@ -26,7 +26,7 @@ To double check, this was cross-referenced against a query in PGAdmin:
 
 <img src="https://github.com/NinaQuik/Amazon_Vine_Analysis/blob/main/Images/Vine_query.png" width="500" height="500">
 
-OK, so there were no review created through Vine.  How many were there?
+OK, so there were no reviews created through Vine.  How many were there?
 
 #### Music Reviews
 
@@ -34,7 +34,7 @@ A query in PGAdmin shows that there are 1,688,881 reviews for digital music that
 
 <img src="https://github.com/NinaQuik/Amazon_Vine_Analysis/blob/main/Images/nonvine_reviews.png" width="500" height="500">
 
-This is a large number and to create a more focused study, the results were filtered down into DataFrames that have rows were the total_votes count  was greater than or equal to 20, and again where the number of helpful_votes divided by total_votes is greater than or equal to 50%.  
+This is a large number and to create a more focused study, the results were filtered down into DataFrames that have rows where the total_votes count  was greater than or equal to 20, and again where the number of helpful_votes divided by total_votes is greater than or equal to 50%.  
 
 Using this more relevent DataFrame, the total number of reviews, the number of 5-star reviews and the percentage of 5-star reviews were calculated and placed into a Pandas DataFrame for easy consumption.
 
@@ -48,3 +48,6 @@ However, Five Star Reviews make up over 55% of Total Reviews for digital music.
 ![stars](/Images/Stars.png)
 
 ![Barchart](/Images/Barchart.png)
+
+The distribution of ratings does not follow a normal bell curve, and there is a clear bias for ratings that are very favorabe - 5 stars at 55%. There are more one star ratings (816) than two or three star ratings combined (270 and 325 respectively). Because the data is skewed, further analysis could be performed to determine if the filtering to reduce the sample set (total_votes >= 20) and (helpful_votes to total_votes >= .5) alterered the distribution.
+Additionally, understanding the algorithm that determines "helpful_votes" might shed more light.   Qualitatively, people may be more compelled to write reviews if they have a strong reaction (good or bad) to the music.  Understanding the customer base that gave five star reviews could also determine if there were marketing forces that biased reviews. 
